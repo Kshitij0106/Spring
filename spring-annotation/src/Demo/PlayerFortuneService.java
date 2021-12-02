@@ -1,4 +1,4 @@
-package spring_Demo;
+package Demo;
 
 import org.springframework.stereotype.Component;
 
@@ -7,7 +7,7 @@ public class PlayerFortuneService implements FortuneService {
 
 	@Override
 	public String getFortune() {
-		return "Go have fun";
+		return "Work hard";
 	}
 
 }

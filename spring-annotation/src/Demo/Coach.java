@@ -1,6 +1,7 @@
-package spring_Demo;
+package Demo;
 
 public interface Coach {
+
 	String getDailyWorkout();
 	
 	String getDailyFortune();

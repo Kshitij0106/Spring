@@ -1,5 +1,7 @@
-package spring_Demo;
+package Demo;
 
 public interface FortuneService {
+	
 	String getFortune();
+
 }
