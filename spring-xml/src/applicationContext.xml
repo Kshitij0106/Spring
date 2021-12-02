@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- load the properties file to inject literal values from a file -->
+	<context:property-placeholder location="classpath:FootballCoach.properties" />
+
+	<bean id="myFortune" class="Demo.PlayerFortuneService"></bean>
+
+	<bean id="footballCoach" class="Demo.FootballCoach">
+		<!-- constructor injection
+		<constructor-arg ref="myFortune" /> -->
+
+		<!-- setter injection -->
+		<property name="fortuneService" ref="myFortune" />
+		
+		<!--  injecting literal values 
+		<property name = "team" value = "FCB" />
+		<property name = "sponsor" value = "Rakuten" /> -->
+		
+		<!-- injecting values from file -->
+		<property name = "team" value = "${foo.team}" />
+		<property name = "sponsor" value = "${foo.sponsor}" />
+
+	</bean>
+
+	<bean id="gymCoach" class="Demo.GymCoach"
+		init-method = "startupStuff"
+		destroy-method = "cleanUpStuff">
+		<!-- constructor injection
+		<constructor-arg ref="myFortune" /> -->
+
+		<!-- setter injection -->
+		<property name="fortuneService" ref="myFortune" />
+	</bean>
+	
+	<bean id = "runningCoach"
+		class = "Demo.RunningCoach"
+		scope = "prototype">
+		
+	</bean>
+</beans>
