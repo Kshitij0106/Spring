@@ -36,10 +36,10 @@ public class GymCoach implements Coach {
 	}
 
 	// setter injection
-//	@Autowired
-//	@Qualifier("randomFortuneService")
-//	public void setFortuneService(FortuneService fortuneService) {
-//		this.fortuneService = fortuneService;
-//	}
+	@Autowired
+	@Qualifier("randomFortuneService")
+	public void setFortuneService(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
 
 }

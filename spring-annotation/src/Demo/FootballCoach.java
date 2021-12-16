@@ -19,10 +19,10 @@ public class FootballCoach implements Coach {
 	}
 	
 	// constructor injection
-	@Autowired
-	public FootballCoach(@Qualifier("playerFortuneService")FortuneService theFortuneService) {
-		fortuneService = theFortuneService;
-	}
+//	@Autowired
+//	public FootballCoach(@Qualifier("playerFortuneService")FortuneService theFortuneService) {
+//		fortuneService = theFortuneService;
+//	}
 
 	@Override
 	public String getDailyWorkout() {
@@ -39,8 +39,8 @@ public class FootballCoach implements Coach {
 	}
 
 	// setter injection
-//	@Autowired
-//	@Qualifier("playerFortuneService")
+	@Autowired
+	@Qualifier("playerFortuneService")
 	public void setFortuneService(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
